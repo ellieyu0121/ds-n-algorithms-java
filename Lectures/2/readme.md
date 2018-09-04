@@ -115,10 +115,115 @@ Example1
 	    }
 	}
 
-##output 
+output:
+
 	same1
 	same2
 	same3
 	nope
 
 Java uses part of the momory called the pool of strings to store all the strings. Every time you check for a string literal, Java will check in that pool of strings 
+
+use reference: https://www.baeldung.com/java-string-pool
+
+<h3>Java Memory</h3>
+
+Stack: 
+Responsible for holding references to heap objects and for storing value types 
+
+Heap: 
+Stores the actual object in memoy. Those are refernces from the variable from the stack 
+
+//insert picture from slides here
+
+What happens in recursion, if we start computing factorial for 1000, that means, we have to compute the factorial for 999, then 998, then 997, and so on... so there are many calls to the function that need to be stored at the memory. 
+
+The role of the garbadge collector: 
+
+-a program that manages memory automatically 
+
+-an object uses some meory and the memory remains allocated till there are references for the use of the object. 
+
+-when there are no references to an object, it is assumed to be no longer needed and the memory, occupied by the object, can be reclaimed.  
+
+
+Example2 
+
+	public class example2 {
+	        int a, b;
+	        public void setData(int c, int d){
+	            a = c;
+	            b = d;
+	        }
+	        public void showData(){
+	            System.out.println(a + " " + b);
+	        }
+	        public static void main(String [] args){
+	            example2 s1 = new example2();
+	            example2 s2 = new example2();
+	            s1.setData(1,2);
+	            s2.setData(3,4);
+	            s1.showData();
+	            s2.showData();
+	            example2 s3;
+	            s3 = s2;
+	            s3.showData();
+	        }
+	}
+
+
+so in the case above, we simply make s3 point to s2
+
+	public class example2 {
+	        int a, b;
+	        public void setData(int c, int d){
+	            a = c;
+	            b = d;
+	        }
+	        public void showData(){
+	            System.out.println(a + " " + b);
+	        }
+	        public static void main(String [] args){
+	            example2 s1 = new example2();
+	            example2 s2 = new example2();
+	            s1.setData(1,2);
+	            s2.setData(3,4);
+	            s1.showData();
+	            s2.showData();
+	            example2 s3;
+	            s3 = s2;
+	            s3.showData();
+	            s2 = null;
+	            s3.showData();
+	        }
+	}
+
+in the case above, s2 is no longer pointing to that object. S3 will still hold the same values. You might think that the Garbadge collector is going to remove that object since we set s2=null. but it won't because s3 is still pointing at it. 
+
+	public class example2 {
+	        int a, b;
+	        public void setData(int c, int d){
+	            a = c;
+	            b = d;
+	        }
+	        public void showData(){
+	            System.out.println(a + " " + b);
+	        }
+	        public static void main(String [] args){
+	            example2 s1 = new example2();
+	            example2 s2 = new example2();
+	            s1.setData(1,2);
+	            s2.setData(3,4);
+	            s1.showData();
+	            s2.showData();
+	            example2 s3;
+	            s3 = s2;
+	            s3.showData();
+	            s2 = null;
+	            s3.showData();
+	            s3 = null; 
+	            s3.showData();
+	        }
+	}
+
+in the case above, there are no references to that object anymore. In that case, we can't access it or use it. It's not reachable anymore. In that case, the Garbadge collector will take care of it and get rid of it. 
