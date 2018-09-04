@@ -81,5 +81,14 @@ There are two parts to each ADT:
 	* The conceptual picture (the user's view of what the object looks like, how the structure is organized)
 	* the conceptual operations (what the user can do with ADT)
 2. The private or internal part, which consists of: 
-	a. the representation (how the structure is actually stored)
-	b. the implementation of the operations (the actual code)
+	* the representation (how the structure is actually stored)
+	* the implementation of the operations (the actual code)
+
+
+	*creators: ArrayList and linkedList constructors 
+	*Producers: collections.unmodifiableList 
+	*Observers: size, get
+	*Mutator: add, remove
+
+
+Random: why are strings immutable?
