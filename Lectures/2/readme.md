@@ -14,7 +14,9 @@ What's a good code?
 
 So in general: 
 
-1) It works (as specified), 2) It is easy to understand and modify 3) It is reasonably efficient 
+1. It works (as specified)
+2. It is easy to understand and modify 
+3. It is reasonably efficient 
 
 One way to help is toi use <b>abstract data types or ADTs</b>
 
@@ -56,9 +58,8 @@ All that matters is the operations
 
 Types can be classified as: 
 
-1- Mutable: objects of a mutable type can be changed: that is they provide operations which when excuted cuase the results of other operations on the same object to give different results. Data is mutable 
-
-2- Immutable: objects cannot be changed 
+1. Mutable: objects of a mutable type can be changed: that is they provide operations which when excuted cuase the results of other operations on the same object to give different results. Data is mutable 
+2. Immutable: objects cannot be changed 
 String is immutable: because its operations create new String objects rather than changing existing ones. Same for integers. 
 
 
@@ -67,7 +68,17 @@ String is immutable: because its operations create new String objects rather tha
 the operations of an abstract type can be classified as follows: 
 
 1. Creators: create a new object of the type. A creator may take an object as an argument, but not an object of the type being constructed. 
-
 2. Producers: create new objects from the old objects of the type 
 3. Observers: take objects of the abstract type and return objects of a differnet type. 
 4. Mutators: change objects
+
+<h3>ADTs</h3>
+
+There are two parts to each ADT: 
+
+1. The public or external part, which consists of: 
+	a. The conceptual picture (the user's view of what the object looks like, how the structure is organized)
+	b. the conceptual operations (what the user can do with ADT)
+2. The private or internal part, which consists of: 
+	a. the representation (how the structure is actually stored)
+	b. the implementation of the operations (the actual code)
