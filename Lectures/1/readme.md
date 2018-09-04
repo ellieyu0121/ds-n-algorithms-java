@@ -15,3 +15,5 @@ Properties of algorithms:
 4- Output 
 
 5- Effectiveness 
+
+![alt text](https://timedotcom.files.wordpress.com/2014/09/macaca_nigra_self-portrait_rotated_and_cropped.jpg?quality=85&w=372)
