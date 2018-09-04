@@ -84,6 +84,7 @@ There are two parts to each ADT:
 	* the representation (how the structure is actually stored)
 	* the implementation of the operations (the actual code)
 
+An examle: 
 
 	*creators: ArrayList and linkedList constructors 
 	*Producers: collections.unmodifiableList 
@@ -92,3 +93,32 @@ There are two parts to each ADT:
 
 
 Random: why are strings immutable?
+
+
+Example1 
+
+	public class example1 {
+	    public static void main(String[]args){
+	        String str1 = "hey";
+	        String str2 = "hey";
+	        String str3 = new String("hey");
+	        if (str1 == str2)
+	            System.out.println("same1");
+	        if (str1.equals(str2))
+	            System.out.println("same2");
+	        if (str1.equals(str3))
+	            System.out.println("same3");
+	        if (str1 == str3)
+	            System.out.println("look same");
+	        else
+	            System.out.println("nope");
+	    }
+	}
+
+##output 
+	same1
+	same2
+	same3
+	nope
+
+Java uses part of the momory called the pool of strings to store all the strings. Every time you check for a string literal, Java will check in that pool of strings 
