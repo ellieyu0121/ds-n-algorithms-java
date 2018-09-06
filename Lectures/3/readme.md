@@ -126,3 +126,39 @@ stats<String> x = new stats<String>(array);
 ```
 the compiler will give us an error because **String** doesn't extend Number 
 
+Another example: 
+
+```java 
+class stats<T extends Number> {
+	T[] nums; 
+	stats(T[] o){
+		nums = o; 
+	}
+	double average(){
+		double sum = 0.0; 
+		for (int i : nums){
+			sum += i.doublevalue();  
+		}
+		return sum/nums.length
+	}
+
+
+	boolean  sameAve(stats<T> ob){
+		if (average() == ob.average())
+			return true; 
+		return false; 
+
+	}
+}
+``` 
+
+apparently, there's an issue with the example above that I don't know. 
+
+using wildcard, ?, we can relax the condition such that 
+```java 
+boolean sameAve(stats<?> ob)
+``` 
+
+
+//the last example wakeup.. insert code here 
+the second line is pointing to a list of strings, we cannot do that. 
