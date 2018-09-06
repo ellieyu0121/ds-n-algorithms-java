@@ -162,3 +162,4 @@ boolean sameAve(stats<?> ob)
 
 //the last example wakeup.. insert code here 
 the second line is pointing to a list of strings, we cannot do that. 
+a list of strings is not a list of objects. it doesn't inherit from a list of objects. Even though Strings inherits from objects. 
