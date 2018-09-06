@@ -134,7 +134,7 @@ Responsible for holding references to heap objects and for storing value types
 Heap: 
 Stores the actual object in memoy. Those are refernces from the variable from the stack 
 
-//insert picture from slides here
+![alt memory](C:\Users\salih\IdeaProjects\CSC 172\Lectures\2\src\memory.png)
 
 What happens in recursion, if we start computing factorial for 1000, that means, we have to compute the factorial for 999, then 998, then 997, and so on... so there are many calls to the function that need to be stored at the memory. 
 

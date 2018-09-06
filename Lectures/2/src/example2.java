@@ -23,7 +23,7 @@ public class example2 {
             s2 = null;
             s3.showData();
 
-            // case 3... object is no longer reachable 
+            // case 3... object is no longer reachable
             s3 = null;
             s3.showData();
         }
