@@ -2,4 +2,4 @@
 
 # IntelliJ
 *.iml
-/.idea
+*/.idea
